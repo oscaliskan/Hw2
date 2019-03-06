@@ -1,8 +1,9 @@
-import static org.junit.Assert.*;
-import java.lang.RuntimeException;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
+import java.lang.RuntimeException;
 import org.junit.Test;
+import org.junit.Before;
 
 public class TestUtil {
   Util c;
