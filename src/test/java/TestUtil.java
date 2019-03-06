@@ -1,7 +1,5 @@
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.junit.Assert.*;
+import java.lang.RuntimeException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,20 +14,22 @@ public class TestUtil {
   public void example() { assertTrue(true); }
 
   @Test
-  public void testLengthZero() {
-    int[] arr = {0};
-    assertEquals(false,c.compute(arr));
+  public void testLengthOne() {
+    assertEquals(false,c.compute(0));
   }
   
   @Test
-  public void testLengthEven() {
-    int[] arr = {0,1};
-    assertEquals(false,c.compute(arr));
+  public void testEvenLength() {
+    assertEquals(false,c.compute(0,1));
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void testRuntimeException() {
+    c.compute(0,1,2,3,4);
   }
 
   @Test
   public void testSum() {
-    int[] arr = {3,5,7,11,13};
-    assertTrue(c.compute(arr));
+    assertTrue(c.compute(3,5,7,11,13));
   }
 }
