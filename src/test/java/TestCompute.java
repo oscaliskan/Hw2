@@ -6,12 +6,14 @@ import static org.mockito.Mockito.*;
 import org.junit.Test;
 
 public class TestCompute {
+  MessageQueue mq; 
   Compute c;
 
+
   @Test
-  public void example() {
-    MessageQueue mq = mock(MessageQueue.class);
+  public void testSize() { 
+    mq = mock(MessageQueue.class);
     c = new Compute(mq);
-    assertTrue(true);
+    assertTrue(c.countNumberOfOccurrences(null) == -1); 
   }
 }
