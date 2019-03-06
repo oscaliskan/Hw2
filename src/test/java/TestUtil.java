@@ -32,4 +32,9 @@ public class TestUtil {
   public void testSum() {
     assertTrue(c.compute(3,5,7,11,13));
   }
+
+  @Test
+  public void testResult() {
+    assertEquals(false, c.compute(3,3,5,7,11));
+  }
 }
